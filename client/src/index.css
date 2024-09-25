@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
 
 *,
 *::before,
@@ -22,6 +24,23 @@ html {
   }
 }
 
+.cursor {
+  cursor: pointer;
+}
+
+.text-light-dark {
+  color: #a89bb4 !important;
+}
+
+.text-lrg {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.text-sml {
+  font-size: 14px !important;
+}
+
 ::-webkit-scrollbar {
   width: 8px !important;
   height: 8px !important;
@@ -37,6 +56,10 @@ html {
 
 .bg-blue {
   background-color: #143d5a;
+}
+
+.header-container {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .header-container .top-stripe {
@@ -202,6 +225,132 @@ nav .nav-part-2 {
   flex: 0 0 80%;
 }
 
+nav .nav-part-1 .cate-wrapper {
+  position: relative;
+}
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav {
+  position: absolute;
+  top: 110%;
+  left: 0px;
+  width: 100%;
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  z-index: 100;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav.open {
+  height: auto;
+  opacity: 1;
+  visibility: inherit;
+}
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav ul li {
+  width: 100%;
+  list-style: none;
+  padding: 0 15px;
+}
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav ul li button {
+  color: #000;
+  width: 100%;
+  justify-content: flex-start;
+  font-size: 14px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  outline: none !important;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav ul li button svg {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav ul li button:hover {
+  background: transparent !important;
+  transform: translateX(5px);
+  -webkit-transform: translateX(5px);
+  -moz-transform: translateX(5px);
+  -ms-transform: translateX(5px);
+  -o-transform: translateX(5px);
+}
+
+/* nav .nav-part-1 .cate-wrapper .sidebar-nav ul li {
+  position: static !important;
+}
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav ul li .sub-menu {
+  position: absolute;
+  top: 0px;
+  left: 102%;
+  width: 250px;
+  height: 100% !important;
+  padding: 20px;
+  background: #fff;
+  z-index: 100;
+  border-left: 1px solid #f1f1f1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav ul li .sub-menu button {
+  border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
+}
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav ul li:hover .sub-menu {
+  opacity: 1;
+  visibility: inherit;
+  left: 100%;
+} */
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav ul li {
+  position: relative !important; /* Ensure relative positioning */
+}
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav ul li .sub-menu {
+  position: absolute;
+  top: -15px; /* Ensure it stays aligned with the parent */
+  left: 100%; /* Make sure it's positioned next to the parent */
+  width: 250px;
+  height: auto !important;
+  padding: 20px;
+  background: #fff;
+  z-index: 100;
+  border-left: 1px solid #f1f1f1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+nav .nav-part-1 .cate-wrapper .sidebar-nav ul li:hover .sub-menu {
+  opacity: 1;
+  visibility: inherit;
+  left: 100%; /* Align the submenu to the right of the hovered item */
+}
+
 nav .all-cate-tab {
   background-color: #2bbef9;
   padding: 10px 15px !important;
@@ -234,6 +383,10 @@ nav .nav-part-2 ul {
   margin-bottom: 0px;
 }
 
+nav .nav-part-2 ul li {
+  padding-bottom: 20px;
+}
+
 nav .nav-part-2 ul li a {
   text-decoration: none;
 }
@@ -248,7 +401,7 @@ nav .nav-part-2 ul li a button {
   display: flex;
   align-items: center;
   outline: none !important;
-  padding: 8px 15px;
+  padding: 8px 20px;
   border-radius: 25px;
   transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
@@ -264,6 +417,69 @@ nav .nav-part-2 ul li a button {
 nav .nav-part-2 ul li a:hover {
   background-color: #f0faff;
   color: #2bbef9;
+}
+
+nav .nav-part-2 ul li {
+  position: relative;
+}
+
+nav .nav-part-2 ul li svg {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+}
+
+nav .nav-part-2 ul li:hover svg {
+  rotate: 180deg;
+}
+
+nav .nav-part-2 ul li .sub-menu {
+  position: absolute;
+  top: 150%;
+  left: 0px;
+  min-width: 200px;
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+nav .nav-part-2 ul li:hover .sub-menu {
+  opacity: 1;
+  visibility: inherit;
+  top: 100%;
+}
+
+nav .nav-part-2 ul li .sub-menu a {
+  display: block;
+  width: 100%;
+}
+
+nav .nav-part-2 ul li .sub-menu a button {
+  width: 100%;
+  justify-content: flex-start;
+  text-transform: capitalize;
+  font-weight: 600;
+  border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
+}
+
+nav .nav-part-2 ul li .sub-menu a button:hover {
+  background: #f1f1f1 !important;
 }
 
 /************ COUNTRY LIST **************/
@@ -308,6 +524,14 @@ nav .nav-part-2 ul li a:hover {
   justify-content: flex-start;
 }
 
+.location-modal .country-list li button:hover {
+  background: #f1f1f1;
+}
+
+.location-modal .country-list li button.active {
+  background: #e2e2e2 !important;
+}
+
 .location-modal .close_ {
   position: absolute;
   top: 10px;
@@ -338,3 +562,58 @@ nav .nav-part-2 ul li a:hover {
 .location-modal .country-list li:last-child {
   border-bottom: none !important;
 } */
+
+/************ HOME BANNER SECTION **************/
+.home-banner-section * {
+  outline: none !important;
+}
+
+.home-banner-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-banner-section .slick-arrow {
+  position: absolute;
+  top: 45%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px !important;
+  height: 40px !important;
+  background: #000;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.home-banner-section .slick-arrow.slick-next {
+  right: 25px !important;
+}
+
+.home-banner-section .slick-arrow.slick-prev {
+  left: 25px !important;
+}
+
+.home-banner-section .item img {
+  width: 100%;
+}
+
+/************ HOME PRODUCT SECTION **************/
+.home-products {
+  padding: 25px 0;
+  width: 100%;
+}
+
+.home-products .banner {
+  width: 100%;
+  overflow: hidden !important;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}

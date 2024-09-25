@@ -1,13 +1,19 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/e-Shop.png';
+import logo from '../../assets/eshop.png';
+// import logo from '../../assets/e-Shop.png';
 import CountryDropDown from '../countryDropDown/CountryDropDown';
 import { Button } from '@mui/material';
 import { FiUser } from 'react-icons/fi';
 import { IoBagOutline } from 'react-icons/io5';
 import SearchBox from '../searchBox/searchBox';
 import Navigation from '../navigation/Navigation';
+import CountryContext from '../../context/Context';
 
 const Header = () => {
+  const { countryList } = useContext(CountryContext);
+  // console.log(countryList);
+
   return (
     <>
       <div className='header-container'>
@@ -32,7 +38,7 @@ const Header = () => {
               </div>
               <div className='col-sm-10 d-flex align-items-center part-2'>
                 {/* COUNTRY DROPDOWN LIST */}
-                <CountryDropDown />
+                {countryList.length !== 0 && <CountryDropDown />}
 
                 {/* SEARCH BAR */}
                 <SearchBox />
