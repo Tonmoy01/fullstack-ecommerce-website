@@ -32,11 +32,6 @@ html {
   color: #a89bb4 !important;
 }
 
-.text-lrg {
-  font-size: 30px;
-  text-transform: uppercase;
-}
-
 .text-sml {
   font-size: 14px !important;
 }
@@ -289,14 +284,14 @@ nav .nav-part-1 .cate-wrapper .sidebar-nav ul li button:hover {
   -o-transform: translateX(5px);
 }
 
-/* nav .nav-part-1 .cate-wrapper .sidebar-nav ul li {
+nav .nav-part-1 .cate-wrapper .sidebar-nav ul li {
   position: static !important;
 }
 
 nav .nav-part-1 .cate-wrapper .sidebar-nav ul li .sub-menu {
   position: absolute;
   top: 0px;
-  left: 102%;
+  left: 105%;
   width: 250px;
   height: 100% !important;
   padding: 20px;
@@ -324,16 +319,16 @@ nav .nav-part-1 .cate-wrapper .sidebar-nav ul li:hover .sub-menu {
   opacity: 1;
   visibility: inherit;
   left: 100%;
-} */
+}
 
-nav .nav-part-1 .cate-wrapper .sidebar-nav ul li {
-  position: relative !important; /* Ensure relative positioning */
+/* nav .nav-part-1 .cate-wrapper .sidebar-nav ul li {
+  position: fixed !important; 
 }
 
 nav .nav-part-1 .cate-wrapper .sidebar-nav ul li .sub-menu {
   position: absolute;
-  top: -15px; /* Ensure it stays aligned with the parent */
-  left: 100%; /* Make sure it's positioned next to the parent */
+  top: -15px; 
+  left: 105%; 
   width: 250px;
   height: auto !important;
   padding: 20px;
@@ -348,8 +343,8 @@ nav .nav-part-1 .cate-wrapper .sidebar-nav ul li .sub-menu {
 nav .nav-part-1 .cate-wrapper .sidebar-nav ul li:hover .sub-menu {
   opacity: 1;
   visibility: inherit;
-  left: 100%; /* Align the submenu to the right of the hovered item */
-}
+  left: 100%;
+} */
 
 nav .all-cate-tab {
   background-color: #2bbef9;
@@ -616,4 +611,165 @@ nav .nav-part-2 ul li .sub-menu a button:hover {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+}
+
+.product-row-section .text-lrg {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+button.view-all-btn {
+  padding: 8px 25px !important;
+  background: #fff;
+  color: #70779a;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: capitalize;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  outline: none !important;
+  border-radius: 30px !important;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  -ms-border-radius: 30px !important;
+  -o-border-radius: 30px !important;
+}
+
+button.view-all-btn svg {
+  font-size: 20px;
+  margin-left: 8px;
+}
+
+.product-item {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.product-item .badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: inline-block;
+  padding: 7px 10px;
+  font-size: 10px;
+  z-index: 100;
+}
+
+.product-item .badge-primary {
+  background: #2cbef9 !important;
+}
+
+.product-item .actions {
+  position: absolute;
+  top: 20px;
+  right: -100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out !important;
+  -webkit-transition: all 0.3s ease-in-out !important;
+  -moz-transition: all 0.3s ease-in-out !important;
+  -ms-transition: all 0.3s ease-in-out !important;
+  -o-transition: all 0.3s ease-in-out !important;
+}
+
+.product-item .actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  background-color: white;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%) !important;
+  outline: none;
+  border-radius: 50% !important;
+  transition: all 0s !important;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  -ms-border-radius: 50% !important;
+  -o-border-radius: 50% !important;
+  -webkit-transition: all 0s !important;
+  -moz-transition: all 0s !important;
+  -ms-transition: all 0s !important;
+  -o-transition: all 0s !important;
+}
+
+.product-item .actions button svg {
+  color: #000 !important;
+  opacity: 0.8;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.product-item .actions button:hover {
+  background: #233a95 !important;
+}
+
+.product-item .actions button:hover svg {
+  color: #fff !important;
+}
+
+.product-item .img-wrapper {
+  overflow: hidden;
+}
+
+.product-item .img-wrapper img {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.product-item .img-wrapper:hover img {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.product-item .img-wrapper:hover .actions {
+  opacity: 1;
+  right: 10px;
+}
+
+.product-item .info {
+  padding: 14px;
+}
+
+.product-item .info h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.product-item .info .old-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.2);
+  text-decoration: line-through;
+}
+
+.product-item .info .net-price {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-row .product-item {
+  border-right: 1px solid transparent !important;
+}
+
+.product-row .swiper-slide:last-child .product-item {
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.swiper {
+  padding: 0 1px 1px 0 !important;
 }
